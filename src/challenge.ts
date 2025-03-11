@@ -19,8 +19,7 @@ import { Student } from "./students";
  */
 function getStudentsByCourse(students: Student[], course: string): Student[] {
   // write your code here...
-
-  return []; // replace empty array with what you see is fit
+  return students.filter(student=> student.courses.find(givenCourse => givenCourse === course) )
 }
 
 /**
@@ -36,8 +35,9 @@ function getStudentsByCourse(students: Student[], course: string): Student[] {
  */
 function listAllCourses(students: Student[]): string[] {
   // write your code here...
-
-  return []; // replace empty array with what you see is fit
+  return students.reduce<string[]>((arr:string[], student)=> { 
+    student.courses.forEach(course=> { if(!arr.includes(course)) arr.push(course) })
+    return arr},<string[]>[])
 }
 
 export { getStudentsByCourse, listAllCourses };
