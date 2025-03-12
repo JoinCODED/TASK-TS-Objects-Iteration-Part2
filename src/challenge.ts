@@ -20,7 +20,7 @@ import { Student } from "./students";
 function getStudentsByCourse(students: Student[], course: string): Student[] {
   // write your code here...
 
-  return []; // replace empty array with what you see is fit
+  return students.filter(student => student.courses.find(crs => crs === course)); // replace empty array with what you see is fit
 }
 
 /**
@@ -36,8 +36,11 @@ function getStudentsByCourse(students: Student[], course: string): Student[] {
  */
 function listAllCourses(students: Student[]): string[] {
   // write your code here...
-
-  return []; // replace empty array with what you see is fit
+  const courses: string[] = [];
+  students.forEach(st => {
+    courses.push(...st.courses)
+  })
+  return [...new Set(courses)]; // replace empty array with what you see is fit
 }
 
 export { getStudentsByCourse, listAllCourses };
