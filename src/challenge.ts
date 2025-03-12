@@ -19,8 +19,12 @@ import { Student } from "./students";
  */
 function getStudentsByCourse(students: Student[], course: string): Student[] {
   // write your code here...
+  // students.filter((s) => s.courses);
+  //const student  = students.filter((student) => {
+  //if(student.courses.forEach(x=>x === course))
 
-  return []; // replace empty array with what you see is fit
+  //});
+  return students; // replace empty array with what you see is fit
 }
 
 /**
